@@ -26,7 +26,7 @@ router.post('/signup', async function (req, res) {
       }else if(password.length < 8){
         res.status(400).send({"message" : "Password should be minimum of 8 characters", "passwordError": true});
       }else{
-        if(email === "annamdasuraghuram@gmail.com"){
+        if(email === "admin@gmail.com"){
           const hashedPassword = await genHashedPassword(password);
           const result = await createUSer({email : email , password : hashedPassword, userName: userName, type : "admin"});
           console.log(hashedPassword);
