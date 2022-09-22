@@ -26,6 +26,11 @@ async function createConnection(){
 
 export const client = await createConnection();
 
+
+app.get("/", (req,res)=>{
+    res.send("Welcome to A2Z Cars backend🎊")
+})
+
 app.use("/users",userRouter);
 app.use("/cars",carsRouter);
  
